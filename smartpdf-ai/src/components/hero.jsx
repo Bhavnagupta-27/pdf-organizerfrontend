@@ -1,31 +1,58 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/hero.css";
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="hero">
 
-      <p className="hero-tag">Powered by AI · OCR · NLP</p>
+      <div className="hero-content">
 
-      <h1>
-        Let AI organize your PDFs.
-        <br />
-        <span>Find anything in seconds.</span>
-      </h1>
+        <div className="hero-badge">
+          Powered by AI · OCR · NLP
+        </div>
 
-      <p className="hero-description">
-        SmartPDF AI automatically understands, organizes and searches
-        all your PDFs using AI — so you can find exactly what you need,
-        when you need it.
-      </p>
+        <h1>
+          Let AI organize your PDFs.
+        </h1>
 
-      <div className="hero-buttons">
-        <button>Start for Free</button>
-        <button className="secondary-btn">View Demo Dashboard</button>
+        <h2>
+          Find anything in seconds.
+        </h2>
+
+        <p>
+          SmartPDF AI automatically organizes, categorizes and extracts
+          information from your PDFs using Artificial Intelligence.
+        </p>
+
+        <div className="hero-buttons">
+
+          <button
+            className="start-btn"
+            onClick={() => navigate("/login")}
+          >
+            Start for Free →
+          </button>
+
+          <button
+            className="demo-btn"
+            onClick={() => navigate("/dashboard")}
+          >
+            View Demo Dashboard
+          </button>
+
+        </div>
+
+        <div className="hero-sources">
+          <span>Import from</span>
+          <span>WhatsApp</span>
+          <span>Email</span>
+          <span>Browser</span>
+          <span>Manual Upload</span>
+        </div>
+
       </div>
-
-      <p className="import-text">
-        Import from WhatsApp · Email · Browser · Manual Upload
-      </p>
 
     </section>
   );
